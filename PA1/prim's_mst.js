@@ -13,12 +13,12 @@ lineReader.on('line', function (line) {
   const edge = {}; 
   const temp = line.split(' ');
   if (temp.length === 3) {
-    edge.u = Number(temp[0]);
-    edge.v = Number(temp[1]);
-    edge.cost = Number(temp[2]);
+    edge.u = parseInt(temp[0]);
+    edge.v = parseInt(temp[1]);
+    edge.cost = parseInt(temp[2]);
   } else { // special case for first line in file 
-    edge.V = Number(temp[0]);
-    edge.E = Number(temp[1]);
+    edge.V = parseInt(temp[0]);
+    edge.E = parseInt(temp[1]);
   }
   edges.push(edge);
 });

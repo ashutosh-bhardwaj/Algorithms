@@ -14,15 +14,13 @@ lineReader.on('line', function (line) {
   const job = {}; 
   const temp = line.split(' ');
   if (temp.length === 2) {
-    job.weight = Number(temp[0]);
-    job.length = Number(temp[1]);
+    job.weight = parseInt(temp[0]);
+    job.length = parseInt(temp[1]);
+    jobs.push(job);
   }
-  jobs.push(job);
 });
 
 lineReader.on('close', function () {
-  // Remove the first item as it isn't a job
-  jobs.shift();
   // Call main function
   scheduler(jobs);
 })
